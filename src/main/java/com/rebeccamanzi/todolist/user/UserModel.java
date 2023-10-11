@@ -5,6 +5,7 @@ import java.util.UUID;
 
 import org.hibernate.annotations.CreationTimestamp;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -20,6 +21,7 @@ public class UserModel {
 
   // @Column(name = "users") -> se quiser especificar o nome da coluna
   // se n especificar, sera o nome da propriedade
+  @Column(unique = true)
   private String username;
   private String name;
   private String password;

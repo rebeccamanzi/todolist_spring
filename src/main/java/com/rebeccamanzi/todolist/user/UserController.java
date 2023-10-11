@@ -22,6 +22,13 @@ public class UserController {
   // @RequestBody -> o userModel será recebido pelo body da request
   @PostMapping("/")
   public UserModel create(@RequestBody UserModel userModel) {
+    var user = this.userRepository.findByUsername(userModel.getUsername());
+
+    if (user != null) {
+      System.out.println("User already exist!");
+      return null;
+    }
+
     var userCreated = this.userRepository.save(userModel);
     return userCreated;
   }
