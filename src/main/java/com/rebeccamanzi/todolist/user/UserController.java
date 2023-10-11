@@ -18,6 +18,6 @@ public class UserController {
   // @RequestBody -> o userModel será recebido pelo body da request
   @PostMapping("/")
   public void create(@RequestBody UserModel userModel) {
-    System.out.println(userModel.name);
+    System.out.println(userModel.getUsername());
   }
 }
